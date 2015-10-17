@@ -1,0 +1,107 @@
+<div class="header">
+    <ul class="nav nav-pills pull-right">
+        <li class="active"><a ng-href="#">Home</a></li>
+        <li><a ng-href="#">About</a></li>
+        <li><a ng-href="#">Contact</a></li>
+    </ul>
+    <h3 class="text-muted">openclassroom_angular</h3>
+</div>
+
+<section ng-controller="menuCtrl">
+    <h1>DIRECTIVES</h1>
+
+    <sywise-accordion>
+
+        <sywise-expander ng-repeat="expander in sywiseExpanders" class="expander" sywise-expander-title="{{expander.title}}">
+            Ceci est la variable "text": {{expander.text}}
+        </sywise-expander>
+
+    </sywise-accordion>
+
+</section>
+
+
+<section ng-controller="headerCtrl">
+    <h1>HEADER - Watch Demonstration </h1>
+
+    <ul>
+        <li ng-repeat="product in products">
+            <b> {{ product.name}}</b>
+            Quantity: <input ng-model="product.quantity"/>
+            Price: <input ng-model="product.price"/>
+        </li>
+    </ul>
+
+    <br>
+
+    <b> Total: </b> {{total()}} <br>
+    <b> Total: </b> {{discount}} <br>
+    <b> Total: </b> {{totalNet()}} <br>
+
+</section>
+<section ng-controller="contentCtrl">
+    <h1>CONTENT</h1>
+
+
+    <input ng-model="name"/>
+
+    <br>
+
+    <p ng-bind="myBindingFunction()"> This is the bindgin Balise</p> <br>
+
+    <p> {{ myBindingFunction() }} This is the bindgin Balise</p>
+
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <input type="checkbox" ng-model="showContent">
+
+    <p ng-show="showContent">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+        laborum.
+    </p>
+
+</section>
+<section ng-controller="footerCtrl">
+    <h1>FOOTER RRSSSSSSSSSSSSS</h1>
+</section>
+
+
+<div class="jumbotron">
+    <h1>'Allo, 'Allo!</h1>
+
+    <p class="lead">
+        <img src="images/yeoman.png" alt="I'm Yeoman"><br>
+        Always a pleasure scaffolding your apps.
+    </p>
+
+    <p><a class="btn btn-lg btn-success" ng-href="#">Splendid!</a></p>
+</div>
+
+<div class="row marketing">
+    <h4>HTML5 Boilerplate</h4>
+
+    <p>
+        HTML5 Boilerplate is a professional front-end template for building fast, robust, and adaptable web apps or
+        sites.
+    </p>
+
+    <h4>Angular</h4>
+
+    <p>
+        AngularJS is a toolset for building the framework most suited to your application development.
+    </p>
+
+    <h4>Karma</h4>
+
+    <p>Spectacular Test Runner for JavaScript.</p>
+</div>
+
+<div class="footer">
+    <p>♥ from the Yeoman team</p>
+</div>

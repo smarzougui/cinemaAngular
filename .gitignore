@@ -1,0 +1,27 @@
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+# compiled output
+/dist
+/tmp
+/docs
+/reports
+
+
+# dependencies
+/node_modules
+/app/bower_components
+/vendor/*
+!/vendor/qunit-shim.js
+
+# misc
+/.sass-cache
+/connect.lock
+/libpeerconnection.log
+.DS_Store
+Thumbs.db
+/coverage/*
+
+nbproject/
+.idea/
+
+
