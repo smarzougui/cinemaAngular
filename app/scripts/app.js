@@ -53,10 +53,12 @@ app.controller("contentCtrl", function ($scope) {
 app.controller("menuCtrl", function ($scope) {
 
     $scope.sywiseExpanders = [
-        {title: 'Title 1', text: 'Content 1'},
-        {title: 'Title 2', text: 'Content 2'},
-        {title: 'Title 3', text: 'Content 3'},
-        {title: 'Title 4', text: 'Content 4'},
+        {title: 'Click me to expand',
+            text: 'Hi there folks, I am the content that was hidden but is now shown.'},
+        {title: 'Click this',
+            text: 'I am even better text than you have seen previously'},
+        {title: 'No, click me!',
+            text: 'I am text that should be seen before seeing other texts'}
     ];
 
 });

@@ -1,5 +1,7 @@
 'use strict';
 
+console.log ('here');
+
 describe('Controller: MainCtrl', function () {
 
   // load the controller's module
