@@ -25,8 +25,8 @@ app.get('/search', function (req, res) {
 })
 
 app.get("/similar/:id", function(req, res){
-   var id = req.params.id;
-   var page = (req.query["page"]) ? req.query["page"] : 1;
+    var id = req.params.id;
+    var page = (req.query["page"]) ? req.query["page"] : 1;
     mdb.movieSimilar({id: id, page: page}, function(err, data){
         res.send(data);
     });
