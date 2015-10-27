@@ -36,7 +36,8 @@
     "underscore": "1.8.3",
     "karma-chrome-launcher": "~0.2.1",
     "qunitjs": "~1.19.0",
-    "karma-qunit": "~0.1.5"
+    "karma-qunit": "~0.1.5",
+    "karma-junit-reporter": "~0.3.8"
   },
   "engines": {
     "node": ">=0.8.0"

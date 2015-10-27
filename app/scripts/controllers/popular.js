@@ -11,7 +11,7 @@ function PopularCtrl(scope, serviceAjax) {
     scope.currentPage = 1;
     scope.totalPages = 0;
 
-    var loadMovies = function() {
+    scope.loadMovies = function() {
         scope.loading = true;
         serviceAjax.popular(scope.currentPage).success(function (data) {
 
@@ -21,7 +21,25 @@ function PopularCtrl(scope, serviceAjax) {
         });
     }
 
-    loadMovies();
+    scope.pageChanged = function(){
+        scope.loadMovies();
+    };
+
+    scope.loadMovies();
+
+
+
+    scope.password = '';
+    scope.grade = function() {
+        var size = scope.password.length;
+        if (size > 8) {
+            scope.strength = 'strong';
+        } else if (size > 3) {
+            scope.strength = 'medium';
+        } else {
+            scope.strength = 'weak';
+        }
+    };
 
 };
 

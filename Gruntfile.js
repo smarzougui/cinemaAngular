@@ -15,15 +15,16 @@ module.exports = function (grunt) {
   // Time how long tasks take. Can help when optimizing build times
   require('time-grunt')(grunt);
 
+  var appConfig = {
+    app: require('./bower.json').appPath || 'app',
+    dist: 'dist'
+  };
+
   // Define the configuration for all the tasks
   grunt.initConfig({
 
     // Project settings
-    yeoman: {
-      // configurable paths
-      app: require('./bower.json').appPath || 'app',
-      dist: 'dist'
-    },
+    yeoman: appConfig,
 
     // Watches files for changes and runs tasks based on the changed files
     watch: {
@@ -77,11 +78,17 @@ module.exports = function (grunt) {
       test: {
         options: {
           port: 9001,
-          base: [
-            '.tmp',
-            'test',
-            '<%= yeoman.app %>'
-          ]
+          middleware: function (connect) {
+            return [
+              connect.static('.tmp'),
+              connect.static('test'),
+              connect().use(
+                  '/bower_components',
+                  connect.static('./bower_components')
+              ),
+              connect.static(appConfig.app)
+            ];
+          }
         }
       },
       dist: {
