@@ -20,6 +20,10 @@ app.config(function ($routeProvider) {
             templateUrl: 'views/movies.html',
             controller: 'SearchCtrl'
         })
+        .when('/info/:id', {
+          templateUrl: 'views/info.html',
+          controller: 'InfoCtrl'
+        })
         .otherwise({
             redirectTo: '/'
         });

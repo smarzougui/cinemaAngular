@@ -31,8 +31,8 @@ describe('Controller: SearchCtrl', function() {
             }
         });
         scope.loadMovies();
-        //expect(scope.totalPages).toEqual(10);
-        //expect(scope.movies).toEqual([{}]);
+        expect(scope.totalPages).toEqual(10);
+        expect(scope.movies).toEqual([{}]);
     });
 
 
