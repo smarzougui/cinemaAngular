@@ -27,8 +27,6 @@ function PopularCtrl(scope, serviceAjax) {
 
     scope.loadMovies();
 
-
-
     scope.password = '';
     scope.grade = function() {
         var size = scope.password.length;

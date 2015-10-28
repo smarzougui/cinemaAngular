@@ -2,7 +2,7 @@
 
 # compiled output
 /dist
-/tmp
+/.tmp
 /docs
 /reports
 
@@ -25,7 +25,6 @@ Thumbs.db
 
 nbproject/
 .idea/
-.tmp
-.tmp/*
-
+/.tmp
+/.tmp/**/*
 

@@ -26,7 +26,7 @@
 
 <!-- Add your site or application content here -->
 <div class="container">
-  <ng-view></ng-view>
+  <div class="container" ng-include="'views/main.html'" ng-controller="MainCtrl"></div>
 </div>
 
 
@@ -61,6 +61,8 @@
 <script src="scripts/controllers/main.js"></script>
 <script src="scripts/controllers/popular.js"></script>
 <script src="scripts/services/serviceAjax.js"></script>
+<script src="scripts/controllers/header.js"></script>
+<script src="scripts/controllers/search.js"></script>
 <!-- endbuild -->
 </body>
 </html>

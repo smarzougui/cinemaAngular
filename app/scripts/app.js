@@ -13,8 +13,12 @@ app.config(function ($routeProvider) {
             controller: 'MainCtrl'
         })
         .when('/popular', {
-            templateUrl: 'views/popular.html',
+            templateUrl: 'views/movies.html',
             controller: 'PopularCtrl'
+        })
+        .when('/search/:query', {
+            templateUrl: 'views/movies.html',
+            controller: 'SearchCtrl'
         })
         .otherwise({
             redirectTo: '/'

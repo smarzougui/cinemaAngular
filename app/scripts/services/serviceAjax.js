@@ -5,6 +5,9 @@ angular.module('openclassroomAngularApp')
         return {
             popular: function (page) {
                 return $http.get("http://vm:3000/popular?page=" + page);
+            },
+            search: function (page, query) {
+                return $http.get("http://vm:3000/search?q=" + query + "&page=" + page);
             }
         }
     });

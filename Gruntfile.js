@@ -15,6 +15,8 @@ module.exports = function (grunt) {
   // Time how long tasks take. Can help when optimizing build times
   require('time-grunt')(grunt);
 
+  grunt.loadNpmTasks('grunt-express-server');
+
   var appConfig = {
     app: require('./bower.json').appPath || 'app',
     dist: 'dist'
@@ -98,6 +100,27 @@ module.exports = function (grunt) {
       }
     },
 
+    express: {
+      options: {
+        // Override defaults here
+      },
+      dev: {
+        options: {
+          script: 'server/server.js'
+        }
+      },
+      prod: {
+        options: {
+          script: 'server/server.js',
+          node_env: 'production'
+        }
+      },
+      test: {
+        options: {
+          script: 'server/server.js'
+        }
+      }
+    },
     // Make sure code styles are up to par and there are no obvious mistakes
     jshint: {
       options: {
@@ -371,6 +394,7 @@ module.exports = function (grunt) {
       'concurrent:server',
       'autoprefixer',
       'connect:livereload',
+        'express',
       'watch'
     ]);
   });
