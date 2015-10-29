@@ -10,10 +10,11 @@
         <ul class="nav nav-pills pull-right">
             <li class="active"><a ng-href="#/popular">Films populaires</a></li>
         </ul>
+
         <h3 class="text-muted">Le cinéma avec Angular</h3>
 
         <div class="row">
-            <form class="form-horizontal col-md-8 col-md-offset-2" role="form" ng-controller="HeaderCtrl"  ng-submit="searchAction()">
+            <form class="form-horizontal col-md-8 col-md-offset-2" role="form" ng-controller="HeaderCtrl" ng-submit="searchAction()">
                 <div class="input-group">
                     <input ng-model="query" type="text" class="form-control" placeholder="Le loup de Wall-Street, Django...">
           <span class="input-group-btn">

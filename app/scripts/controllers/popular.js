@@ -10,6 +10,7 @@ function PopularCtrl(scope, serviceAjax) {
 
     scope.currentPage = 1;
     scope.totalPages = 0;
+    scope.loading = true;
 
     scope.loadMovies = function() {
         scope.loading = true;
@@ -17,7 +18,9 @@ function PopularCtrl(scope, serviceAjax) {
 
             scope.movies = data.results;
             scope.totalPages = data.total_pages;
+
             scope.loading = false;
+
         });
     }
 
@@ -38,6 +41,11 @@ function PopularCtrl(scope, serviceAjax) {
             scope.strength = 'weak';
         }
     };
+
+    function _sleep(delay) {
+        var start = new Date().getTime();
+        while (new Date().getTime() < start + delay);
+    }
 
 };
 
