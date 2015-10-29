@@ -6,14 +6,16 @@ angular.module('openclassroomAngularApp')
             scope: {
                 loadingDirective: '=loadingState'
             },
-            template: '<div ng-show="loadingDirective" class="loadingContainer"> LOADING ... </div>',
+            template:
+            '<div>' +
+            '<div ng-show="loadingDirective" class="loading-container"></div>' +
+            '</div>',
             restrict: 'AE',
             replace: true,
-            link: function(scope, elem, attrs) {
-                //console.log("fromlink=", scope.loadingDirective);
-            },
             compile: function compile(element, attrs, transclude) {
-                //var spinner = new spin();
+                var spinner = new Spinner().spin();
+                var loadingContainer = element.find(".loading-container")[0];
+                loadingContainer.appendChild(spinner.el);
 
             }
         };

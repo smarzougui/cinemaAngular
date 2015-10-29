@@ -10,8 +10,6 @@ angular.module('openclassroomAngularApp')
                 return $http.get("http://vm:3000/search?q=" + query + "&page=" + page);
             },
             info: function(id) {
-
-                console.log("ttttttttttttt=", id);
                 return $http.get("http://vm:3000/info/" + id);
             }
         }
