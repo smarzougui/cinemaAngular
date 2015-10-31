@@ -11,6 +11,8 @@ function PopularCtrl(scope, serviceAjax) {
     scope.currentPage = 1;
     scope.totalPages = 0;
     scope.loading = true;
+    scope.reverse = false;
+    scope.predicate = "title";
 
     scope.loadMovies = function() {
         scope.loading = true;
@@ -29,6 +31,16 @@ function PopularCtrl(scope, serviceAjax) {
     };
 
     scope.loadMovies();
+
+    scope.clickPredicateName = function() {
+        scope.predicate = 'title';
+        scope.reverse = !scope.reverse;
+    };
+
+    scope.clickPredicateRate = function() {
+        scope.predicate = 'vote_average';
+        scope.reverse = !scope.reverse;
+    };
 
     scope.password = '';
     scope.grade = function() {

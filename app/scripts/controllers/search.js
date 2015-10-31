@@ -9,6 +9,8 @@ function SearchCtrl(scope, location, routeParams, serviceAjax) {
     scope.totalPages = 0;
     scope.query = routeParams.query;
     scope.loading = true;
+    scope.reverse = false;
+    scope.predicate = "title";
 
     scope.loadMovies = function() {
         scope.loading = true;
@@ -17,6 +19,16 @@ function SearchCtrl(scope, location, routeParams, serviceAjax) {
             scope.totalPages = data.total_pages;
             scope.loading = false;
         });
+    };
+
+    scope.clickPredicateName = function() {
+        scope.predicate = 'title';
+        scope.reverse = !scope.reverse;
+    };
+
+    scope.clickPredicateRate = function() {
+        scope.predicate = 'vote_average';
+        scope.reverse = !scope.reverse;
     };
 
     scope.loadMovies();

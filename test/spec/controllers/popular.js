@@ -49,4 +49,19 @@ describe('Controller: PopularCtrl', function() {
         expect($scope.strength).toEqual('strong');
     });
 
+    it('should change scope.reverse and scope.predicate when calling  scope.clickpredicateNameFunction;', function() {
+        scope.reverse= true;
+        scope.clickPredicateName();
+        expect(scope.reverse).toBe(false);
+        expect(scope.predicate).toBe('title');
+    });
+
+    it('should change scope.reverse and scope.predicate when calling  scope.clickpredicateRate Function;', function() {
+        scope.reverse= true;
+        scope.clickPredicateRate();
+        expect(scope.reverse).toBe(false);
+        expect(scope.predicate).toBe('vote_average');
+    });
+
+
 });
