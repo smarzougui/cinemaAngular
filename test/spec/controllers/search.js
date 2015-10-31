@@ -6,7 +6,7 @@ describe('Controller: SearchCtrl', function() {
     var PopularCtrl, serviceAjax, scope;
 
     // Initialize the controller and a mock scope
-    beforeEach(inject(function($rootScope, _$controller_, _$routeParams_, _serviceAjax_) {
+    beforeEach(inject(function(_$controller_, $rootScope, _$routeParams_, _serviceAjax_) {
         scope = $rootScope.$new();
         $controller = _$controller_;
         serviceAjax = _serviceAjax_;
@@ -25,7 +25,7 @@ describe('Controller: SearchCtrl', function() {
             return {
                 success: function(callback) {
                     callback({
-                        "results": [{}], "total_pages": 10, "total_results": 11111
+                        "results": [{}], "total_pages": 10
                     })
                 }
             }
@@ -38,10 +38,8 @@ describe('Controller: SearchCtrl', function() {
 
     it('should call loadMovies function when calling pageChanged function', function() {
         spyOn(scope, "loadMovies");
-        //spyOn(scope, "pageChanged");
         scope.pageChanged();
 
-        //expect(scope.pageChanged).toHaveBeenCalled();
         expect(scope.loadMovies).toHaveBeenCalled();
     });
 
