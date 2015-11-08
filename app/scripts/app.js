@@ -10,15 +10,28 @@ app.config(function ($routeProvider) {
     $routeProvider
         .when('/', {
             templateUrl: 'views/main.html',
-            controller: 'MainCtrl'
+            controller: 'MainCtrl',
+            reloadOnSearch: false
+        })
+        .when('/samples', {
+            templateUrl: 'views/samples.html',
+            controller: 'SamplesCtrl',
+            reloadOnSearch: false
         })
         .when('/popular', {
             templateUrl: 'views/movies.html',
-            controller: 'PopularCtrl'
+            controller: 'PopularCtrl',
+            reloadOnSearch: false
         })
         .when('/search/:query', {
             templateUrl: 'views/movies.html',
-            controller: 'SearchCtrl'
+            controller: 'SearchCtrl',
+            reloadOnSearch: false
+        })
+        .when('/samples', {
+            templateUrl: 'views/samples.html',
+            controller: 'SamplesCtrl',
+            reloadOnSearch: false
         })
         .when('/info/:id', {
           templateUrl: 'views/info.html',
@@ -26,7 +39,8 @@ app.config(function ($routeProvider) {
         })
         .otherwise({
             redirectTo: '/'
-        });
+        })
+    ;
 
     //$locationProvider.html5Mode(true);
 

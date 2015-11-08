@@ -2,6 +2,8 @@
 
 
 <div class="row" ng-show="movies.length > 1">
+    Filter: <input ng-model="search"/>
+
     <a ng-click="clickPredicateName()" class="col-md-offset-7 col-md-2">Trier par nom</a>
     <a ng-click="clickPredicateRate()" class="col-md-2">Trier par note</a>
 </div>
@@ -9,7 +11,7 @@
 
 <div class="movies-container" id="top">
     <ul class="movies">
-        <li ng-repeat="movie in movies | orderBy: predicate:reverse">
+        <li ng-repeat="movie in movies | orderBy: predicate:reverse | filter: search">
             <div class="row">
                 <a class="col-md-4" ng-href="#/info/{{movie.id}}">
                     <img ng-src="http://image.tmdb.org/t/p/w500{{movie.poster_path}}" width="200" height="300"/>
